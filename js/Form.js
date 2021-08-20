@@ -24,3 +24,13 @@ email.addEventListener('input', function(){
     else 
         emailError.textContent = "Email is Incorrect";
 });
+
+const tel = document.querySelector('#tel');
+const telError = document.querySelector('.tel-error');
+tel.addEventListener('input', function(){
+    let telRegex = RegExp("^[1-9]{1}[0-9]{0,3}\\s[1-9]{1}[0-9]{9}$");
+    if(telRegex.test(tel.value))
+        telError.textContent = "";
+    else 
+        telError.textContent = "PhoneNumber is Incorrect";
+});
