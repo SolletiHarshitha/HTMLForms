@@ -14,3 +14,13 @@ output.textContent = salary.value;
 salary.addEventListener('input', function(){
     output.textContent = salary.value;
 });
+
+const email = document.querySelector('#email');
+const emailError = document.querySelector('.email-error');
+email.addEventListener('input', function(){
+    let emailRegex = RegExp("^[a-z]{1,}[a-z0-9]*[-.+]{0,1}[a-z0-9]+[@]{1}([a-z0-9]+)(\\.[a-z]{2,}){1,2}$");
+    if(emailRegex.test(email.value))
+        emailError.textContent = "";
+    else 
+        emailError.textContent = "Email is Incorrect";
+});
