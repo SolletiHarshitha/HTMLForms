@@ -34,3 +34,13 @@ tel.addEventListener('input', function(){
     else 
         telError.textContent = "PhoneNumber is Incorrect";
 });
+
+const password = document.querySelector('#pwd');
+const pwdError = document.querySelector('.pwd-error');
+text.addEventListener('input', function(){
+    let passwordRegex = RegExp('^[A-Za-z0-9]{8,}$');
+    if(passwordRegex.test(password.value))
+        pwdError.textContent = "";
+    else 
+        pwdError.textContent = "Minimum 8 characters";
+});
